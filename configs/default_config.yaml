@@ -1,0 +1,73 @@
+ablation:
+  use_cs: true
+  use_cwt: true
+  use_ema: true
+compressed_sensing:
+  compression_ratio: 0.5
+  reconstruction_methods:
+  - omp
+  - lsomp
+  - ilsomp
+  sensing_matrix: bernoulli
+  sparse_basis: dct
+  sparsity_k: 64
+cwt:
+  image_size: 224
+  output_channels: 3
+  scales_end: 128
+  scales_start: 1
+  wavelet: morlet
+paths:
+  checkpoints_dir: E:/paper1/paper/repro_framework/artifacts/checkpoints
+  cwru_root: E:/paper1/paper/CWRU
+  cwt_dir: E:/paper1/paper/repro_framework/artifacts/cwt_images
+  dataset_type: pu
+  figures_dir: E:/paper1/paper/repro_framework/artifacts/figures
+  pu_root: E:/paper1/paper/Paderborn
+  reconstructed_dir: E:/paper1/paper/repro_framework/artifacts/reconstructed
+  segmented_dir: E:/paper1/paper/repro_framework/artifacts/segments
+  split_dir: E:/paper1/paper/repro_framework/artifacts/splits
+  workspace_root: E:/paper1/paper/repro_framework
+reporting:
+  metrics:
+  - accuracy
+  - macro_f1
+  - precision
+  - recall
+  - confusion_matrix
+  num_repeats: 5
+seed: 42
+signal:
+  allowed_path_keywords:
+  - 12DriveEndFault
+  - NormalBaseline
+  classes:
+  - normal
+  - ball
+  - inner_race
+  - outer_race
+  loads_hp:
+  - 0
+  - 1
+  - 2
+  - 3
+  normalize: max_abs
+  sampling_rate: 12000
+  segment_length: 1024
+  stride: 1024
+training:
+  backbones:
+  - resnet34
+  - alexnet
+  - vgg16
+  - densenet121
+  batch_size: 128
+  epochs: 30
+  freeze_backbone_ratio: 0.5
+  learning_rate: 0.001
+  num_workers: 2
+  optimizer: adam
+  test_ratio: 0.1
+  train_ratio: 0.8
+  use_ema_model: true
+  val_ratio: 0.1

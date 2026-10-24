@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "study_name": "leakage-aware matched-budget compressed bearing diagnosis",
+  "development_dataset": "pu",
+  "external_dataset": "cwru",
+  "representation": "stft",
+  "primary_split_unit": "source-file",
+  "leakage_control_split_unit": "window",
+  "retention_ratio": 0.5,
+  "methods": [
+    "no_cs",
+    "ilsomp",
+    "downsample",
+    "pca",
+    "random_projection"
+  ],
+  "leakage_audit_methods": [
+    "no_cs",
+    "ilsomp"
+  ],
+  "development_seeds": [42],
+  "formal_seeds": [42, 100, 200],
+  "training": {
+    "backbone": "resnet34_ema",
+    "epochs": 30,
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "freeze_ratio": 0.5,
+    "num_workers": 2,
+    "prepare_workers": 2,
+    "prepare_chunksize": 8,
+    "amp": true,
+    "class_weighting": "balanced",
+    "fast_training": true,
+    "prefetch_factor": 4,
+    "eval_num_workers": 0,
+    "checkpoint_selection": "best-val"
+  },
+  "compressed_sensing": {
+    "method": "ilsomp",
+    "sparsity_k": 64,
+    "gradient_lambda": 0.25,
+    "sparse_basis": "dct"
+  },
+  "stft": {
+    "nperseg": 64,
+    "noverlap": 32
+  },
+  "claim_rules": {
+    "validation_only_is_not_paper_performance": true,
+    "leaky_control_is_not_valid_generalization_performance": true,
+    "formal_mean_std_requires_n": 3,
+    "all_methods_share_split_fingerprint_with_no_cs": true,
+    "failed_adaptive_candidates_are_excluded": true
+  }
+}

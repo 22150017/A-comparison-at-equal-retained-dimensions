@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "study_name": "CWRU matched-budget five-seed confirmatory extension",
+  "base_protocol_path": "configs/leakage_aware_benchmark_v1.json",
+  "base_protocol_signature": "598ba4f57533501db61bcb0c",
+  "base_stage": "external-cwru",
+  "original_seeds": [42, 100, 200],
+  "extension_seeds": [300, 400],
+  "methods": [
+    "no_cs",
+    "ilsomp",
+    "downsample",
+    "pca",
+    "random_projection"
+  ],
+  "retention_ratio": 0.5,
+  "split_unit": "source-file",
+  "reason": "Prospective two-seed extension motivated by high between-split variance in the locked three-seed CWRU benchmark; all five methods are extended symmetrically."
+}

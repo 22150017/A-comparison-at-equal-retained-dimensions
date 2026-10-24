@@ -1,0 +1,11 @@
+pyyaml
+numpy
+scipy
+matplotlib
+pillow
+pywavelets
+scikit-learn
+torch
+torchvision
+thop
+pubfig

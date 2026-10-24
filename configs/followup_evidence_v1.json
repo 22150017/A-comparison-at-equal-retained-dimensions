@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "base_protocol_signature": "598ba4f57533501db61bcb0c",
+  "dataset": "pu",
+  "representation": "stft",
+  "split_unit": "source-file",
+  "seeds": [42, 100, 200],
+  "development_seed": 42,
+  "ratios": [0.30, 0.50, 0.70, 0.90],
+  "curve_methods": ["ilsomp", "pca"],
+  "efficiency_methods": ["no_cs", "ilsomp", "downsample", "pca", "random_projection"],
+  "efficiency": {
+    "timed_samples": 64,
+    "warmup_samples": 5,
+    "repeats": 5,
+    "pca_fit_samples": 512
+  },
+  "claim_rules": {
+    "formal_curve_requires_complete_development_curve": true,
+    "formal_curve_requires_complete_formal_pu": true,
+    "formal_statistics_require_n": 3,
+    "reconstruction_quality_term": "reconstruction_snr_db",
+    "psnr_claim_forbidden_without_fixed_physical_dynamic_range": true,
+    "efficiency_is_device_specific": true
+  }
+}
