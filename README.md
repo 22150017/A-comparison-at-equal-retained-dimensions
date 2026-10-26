@@ -31,8 +31,10 @@ The corrected archive is named `Supplementary_S1_Code_and_Evidence_MST_Corrected
 
 SHA256: `f3c6e48f32ad8e73841af45a6ebde0d32e21983472770bb464368b2dcfe776db`.
 
-This commit publishes the corrected **source code**, not that 512 MB binary archive. The corrected evidence ZIP is pending a separate Release-asset upload. `verify_cwru_corrected_evidence.py` requires the complete package, including `evidence/cwru_corrected_v2_index.json` and the indexed predictions.
+The complete corrected evidence archive is available under [v1.1.0-mst-corrected](https://github.com/22150017/A-comparison-at-equal-retained-dimensions/releases/tag/v1.1.0-mst-corrected). Download `Supplementary_S1_Code_and_Evidence_MST_Corrected_20261023.zip`; its file size and GitHub SHA256 digest match the values above. The release tag points to corrected source commit `269bc23d82b53f561263b635d4426c3b6abe4432`.
 
-The older [v1.0.0 release](https://github.com/22150017/A-comparison-at-equal-retained-dimensions/releases/tag/v1.0.0) is retained for history. Its pre-correction CWRU results are superseded and should not be used as the corrected manuscript results. `README_S1.md` records the package version distinctions and verification scope.
+`verify_cwru_corrected_evidence.py` requires this complete package, including `evidence/cwru_corrected_v2_index.json` and the indexed predictions.
 
-`CODE_SHA256.json` records the exact UTF-8 contents published in this commit. No raw signals, neural-network weights, credentials or unpublished manuscript files are uploaded here.
+Earlier pre-correction archives remain among the release assets for version traceability. Their CWRU results are superseded and must not be used as the corrected manuscript results. `README_S1.md` records the package version distinctions and verification scope.
+
+`CODE_SHA256.json` records SHA256 checksums for the distributed text files. No raw signals, neural-network weights, credentials or unpublished manuscript files are uploaded here.
